@@ -27,6 +27,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'org.xerial:sqlite-jdbc:3.47.1.0'
     implementation 'org.hibernate.orm:hibernate-community-dialects:6.6.3.Final'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.springframework.boot:spring-boot-starter-flyway'
 }
 
 tasks.named('test') {
