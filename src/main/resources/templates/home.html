@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+</head>
+<body>
+<div style="text-align: center; margin-top: 50px;">
+    <h1>Witaj w tajnej strefie!</h1>
+    <p style="color: green;">Udało Ci się zalogować poprawnie.</p>
+
+    <br>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" style="background-color: #ffcccc;">Wyloguj</button>
+    </form>
+</div>
+</body>
+</html>
