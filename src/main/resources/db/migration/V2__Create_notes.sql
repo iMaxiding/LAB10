@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS notes (
+                                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                     title TEXT NOT NULL,
+                                     content TEXT NOT NULL,
+                                     user_id INTEGER NOT NULL,
+                                     created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+CREATE INDEX IF NOT EXISTS idx_notes_user_id ON notes(user_id);
