@@ -6,28 +6,31 @@
 </head>
 <body>
 <div style="text-align: center; margin-top: 50px;">
-    <h2>Zaloguj się</h2>
+    <h1>Zaloguj się</h1>
 
+    <div style="margin-bottom: 15px;">
+
+        <div th:if="${param.error}" style="color: red;">
+            Błędny login lub hasło!
+        </div>
+
+        <div th:if="${param.logout}" style="color: green;">
+            Zostałeś pomyślnie wylogowany.
+        </div>
+
+        <div th:if="${param.expired}" style="color: orange; font-weight: bold;">
+            Twoja sesja wygasła! Zaloguj się ponownie.
+        </div>
+
+    </div>
     <form th:action="@{/login}" method="post">
-        <p>
-            <label>Email (Login):</label><br>
-            <input type="text" name="username" required/> </p>
-        <p>
-            <label>Hasło:</label><br>
-            <input type="password" name="password" required/>
-        </p>
+        <label>Login: <input type="text" name="username" required/></label><br><br>
+        <label>Hasło: <input type="password" name="password" required/></label><br><br>
         <button type="submit">Zaloguj</button>
     </form>
 
     <br>
-    <a href="/register">Nie masz konta? Zarejestruj się</a>
-
-    <div th:if="${param.error}" style="color:red; margin-top:10px">
-        Błędny login lub hasło!
-    </div>
-    <div th:if="${param.logout}" style="color:green; margin-top:10px">
-        Wylogowano pomyślnie.
-    </div>
+    <a href="/register">Rejestracja</a>
 </div>
 </body>
 </html>
