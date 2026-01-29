@@ -45,7 +45,7 @@ public class RateLimitingFilter implements Filter {
     // Konfiguracja limitu
     private Bucket createNewBucket(String key) {
         // Limit: 10 żądań na 1 minutę
-        Bandwidth limit = Bandwidth.classic(10, Refill.greedy(10, Duration.ofMinutes(1)));
+        Bandwidth limit = Bandwidth.classic(100, Refill.greedy(100, Duration.ofMinutes(1)));
         return Bucket.builder().addLimit(limit).build();
     }
 }
